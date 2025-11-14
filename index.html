@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inicio — Axel Vera y Aragón</title>
+  <link rel="stylesheet" href="static/estilos.css" />
+</head>
+<body>
+  <!-- MENÚ DE NAVEGACIÓN (presente en todas las páginas) -->
+  <nav class="menu">
+    <a href="index.html">🏠 Inicio</a>
+    <a href="pagina1.html">👤 Perfil</a>
+    <a href="pagina2.html">🖼️ Galería</a>
+    <a href="pagina3.html">📝 Blog</a>
+  </nav>
+
+  <header>
+    <h1 class="zoom-title">⚽ Tony Kroos - Mediocampista Legendario</h1>
+    <p class="subtitle">Sitio oficial del jugador | FC Real Madrid | Selección Nacional Alemania</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p>A continuación encontrarás 5 botones animados que enlazan a las diferentes secciones — conoce más sobre mi carrera, galería de momentos destacados y blog personal.</p>
+    </section>
+
+    <!-- 5 BOTONES ANIMADOS (cada uno con animación diferente) -->
+    <section class="botones-principales">
+      <a href="pagina1.html" class="boton b1">👤 Mi Perfil</a>
+      <a href="pagina2.html" class="boton b2">� Galería de Fotos</a>
+      <a href="pagina3.html" class="boton b3">📝 Mi Blog</a>
+      <a href="pagina1.html#contacto" class="boton b4">� Redes Sociales</a>
+      <a href="https://www.transfermarkt.es/toni-kroos/erfolge/spieler/31909" class="boton b5">🏆 Carrera Exitosa</a>
+    </section>
+
+    <!-- TARJETAS DESCRIPTIVAS DE PÁGINAS -->
+    <section class="descripcion-contenido">
+      <article class="tarjeta-desc">
+        <h3>👤 Mi Perfil</h3>
+        <p>Conoce mi biografía, trayectoria en equipos de élite (Bayern Munich, Real Madrid), logros y títulos conquistados en mi carrera futbolística.</p>
+      </article>
+
+      <article class="tarjeta-desc">
+        <h3>� Galería de Fotos</h3>
+        <p>Descubre momentos destacados de mi carrera: goles, celebraciones, partidos memorables con el Real Madrid y la selección alemana, trofeos ganados.</p>
+      </article>
+
+      <article class="tarjeta-desc">
+        <h3>📝 Mi Blog</h3>
+        <p>Lee artículos sobre mi trayectoria profesional: desde mis inicios en Alemania, paso por Bayern Munich, y mi evolución en el Real Madrid.</p>
+      </article>
+
+      <article class="tarjeta-desc">
+        <h3>📱 Redes Sociales</h3>
+        <p>Sígueme en mis redes sociales oficiales para estar al día de mis últimas noticias, fotos y actualizaciones directas desde el campo.</p>
+      </article>
+
+      <article class="tarjeta-desc">
+        <h3>🏆 Carrera Exitosa</h3>
+        <p>Mediocampista de élite con múltiples títulos, incluyendo la Liga de Campeones de Europa, La Liga española y campeonatos con Alemania.</p>
+      </article>
+    </section>
+
+    <!-- OBSERVACIÓN 2: Caja que cambia de color en ciclo -->
+    <section class="demo-section">
+      <h2>Animaciones CSS Aplicadas</h2>
+      <div class="color-cycle-box"></div>
+      <p><small>Caja que cambia de color en ciclo - Colores del Real Madrid: Blanco ⚪ → Azul Real 🔵 → Blanco ⚪</small></p>
+
+      <!-- OBSERVACIÓN 4: Cuadro que aumenta tamaño en hover -->
+      <div class="scale-box"></div>
+      <p><small>Cuadro que aumenta de tamaño en hover (observación 4)</small></p>
+
+      <!-- OBSERVACIÓN 5: Texto rotativo con velocidades variables -->
+      <div class="variable-speed">
+        <p class="fast">Rápido: Axel Vera y Aragón</p>
+        <p class="normal">Normal: Axel Vera y Aragón</p>
+        <p class="slow">Lento: Axel Vera y Aragón</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <footer>
+        <p>© 2025 Tony Kroos - Real Madrid CF | Todos los derechos reservados</p>
+        <p>© Axel Vera y Aragon - 13/11/2025 | Todos los derechos reservados</p>
+    </footer>
+
+  <!-- JavaScript para botón cambiante (observación 1) -->
+  <script>
+    document.querySelectorAll('.boton').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.currentTarget.classList.add('clicked');
+        setTimeout(() => e.currentTarget.classList.remove('clicked'), 700);
+      });
+    });
+  </script>
+</body>
+</html>
