@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Tony Kroos</title>
+    <link rel="stylesheet" href="static/estilos.css">
+</head>
+
+<body>
+
+    <!-- MENÚ SUPERIOR (presente en todas las páginas) -->
+    <nav class="menu">
+        <a href="index.html">🏠 Inicio</a>
+        <a href="pagina1.html">👤 Perfil</a>
+        <a href="pagina2.html">🖼️ Galería</a>
+        <a href="pagina3.html">📝 Blog</a>
+    </nav>
+
+    <header>
+        <h1>Mi Blog</h1>
+        <p class="subtitle">Historias y reflexiones de mi carrera en el fútbol</p>
+    </header>
+
+    <main class="container">
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            Aquí encontrarás artículos sobre mis experiencias en el fútbol, mi evolución como jugador 
+            y los momentos más importantes de mi carrera. Cada artículo se anima suavemente al aparecer en pantalla.
+        </p>
+
+        <!-- PASO 1 (con animación de desplazamiento suave) -->
+        <section class="articulo">
+            <h2>Mi Viaje en el Fútbol Profesional</h2>
+            <img src="../imagenes/Toni.jpg" class="imagen-encabezado" alt="Inicios en Bayern">
+            <p>
+                Mi carrera comenzó en las categorías inferiores del Bayern Munich en 2007. 
+                Con dedicación y trabajo constante, logré ascender a través de las divisiones, 
+                debutando en la Bundesliga en 2010. Fueron años de aprendizaje fundamental que me 
+                permitieron desarrollar la técnica y visión de juego que me caracteriza hoy en día.
+            </p>
+            <a href="https://www.fcbayern.com/" class="leer-mas" target="_blank">📖 Leer más</a>
+        </section>
+
+        <!-- PASO 2 (con animación de desplazamiento suave) -->
+        <section class="articulo">
+            <h2>De Bayern Munich a Real Madrid</h2>
+            <img src="../imagenes/control.jpg" class="imagen-encabezado" alt="Real Madrid">
+            <p>
+                En 2014, decidí dar el siguiente paso en mi carrera uniéndome al Real Madrid. 
+                Fue una decisión importante que me permitió crecer como jugador y competir en el más alto nivel. 
+                En el Real Madrid he tenido la oportunidad de ganar múltiples títulos de La Liga y alcanzar 
+                la gloria en la Champions League, consolidándome como un mediocampista de clase mundial.
+            </p>
+            <a href="https://www.realmadrid.com/" class="leer-mas" target="_blank">📖 Leer más</a>
+        </section>
+
+        <!-- PASO 3 (con animación de desplazamiento suave) -->
+        <section class="articulo">
+            <h2>Mi Legado y Reflexión Final</h2>
+            <img src="../imagenes/KroosUndecima.jpg" class="imagen-encabezado" alt="Legado">
+            <p>
+                A lo largo de mi carrera he aprendido que el éxito en el fútbol no solo se trata de ganar trofeos, 
+                sino de la dedicación diaria, el trabajo en equipo y la pasión por el juego. 
+                Mi objetivo siempre ha sido aportar lo mejor de mí en cada partido, 
+                ayudar a mis compañeros y representar a mis clubes con honor y profesionalismo. 
+                Estoy agradecido por cada momento vivido en el fútbol.
+            </p>
+            <a href="https://es.wikipedia.org/wiki/Tony_Kroos" class="leer-mas" target="_blank">📖 Leer más</a>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+        <p>© 2025 Tony Kroos - Real Madrid CF | Todos los derechos reservados</p>
+        <p>© Axel Vera y Aragon - 13/11/2025 | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script para animación de desplazamiento suave (slide up al aparecer) -->
+    <script>
+        // Observador para animar artículos al entrar en vista
+        const observador = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideUpArticulo 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observar todos los artículos
+        document.querySelectorAll('.articulo').forEach((article, index) => {
+            article.style.opacity = '0';
+            article.style.transform = 'translateY(30px)';
+            article.style.animationDelay = (index * 0.2) + 's';
+            observador.observe(article);
+        });
+    </script>
+</body>
+</html>
